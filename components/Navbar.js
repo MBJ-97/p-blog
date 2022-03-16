@@ -47,7 +47,7 @@ function Navbar() {
 
           <div className="actions flex space-x-7">
             <div className="navLinks hidden sm:flex">
-              <ul className="flex items-center space-y-7 sm:space-y-0 sm:space-x-7">
+              <ul className="flex cursor-pointer items-center space-y-7 sm:space-y-0 sm:space-x-7">
                 <li>
                   <a className="font-semibold">
                     <span>Home</span>
