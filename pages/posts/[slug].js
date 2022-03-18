@@ -1,6 +1,5 @@
 import sanityClient from "../../groq-client";
 import { PortableText } from "@portabletext/react";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,9 +21,7 @@ export default function singlePost({ post, category }) {
   let result = category.filter(filterByRef);
   const { title } = result[0];
 
-  // Route params
-  const router = useRouter();
-  const { slug } = router.query;
+  const linkSlug = post.slug.current;
 
   return (
     <div>
@@ -52,13 +49,15 @@ export default function singlePost({ post, category }) {
       <div className="share flex flex-col items-center justify-center">
         <h2 className="mb-4 text-xl font-bold">Share this article</h2>
         <div className="shareIcons flex space-x-5">
-          <TwitterShareButton url={`blog.mahdibeldjoudi.xyz/posts/${slug}`}>
+          <TwitterShareButton url={`blog.mahdibeldjoudi.xyz/posts/${linkSlug}`}>
             <div className="twitter rounded-full bg-gradient-to-r from-accent via-blue to-purple py-4 px-6">
               <FontAwesomeIcon icon={faTwitter} />
             </div>
           </TwitterShareButton>
 
-          <FacebookShareButton url={`blog.mahdibeldjoudi.xyz/posts/${slug}`}>
+          <FacebookShareButton
+            url={`blog.mahdibeldjoudi.xyz/posts/${linkSlug}`}
+          >
             <div className="facebook rounded-full bg-gradient-to-r from-accent via-blue to-purple py-4 px-6">
               <FontAwesomeIcon icon={faFacebook} />
             </div>
@@ -75,6 +74,7 @@ const query = `
   title,
   _createdAt,
   body,
+  slug,
   categories,
   mainImage {
     asset -> {
