@@ -52,6 +52,7 @@ function Navbar() {
                   <a
                     href="https://mahdibeldjoudi.xyz/"
                     target="_blank"
+                    rel="noreferrer"
                     className="font-semibold"
                   >
                     <span>Home</span>

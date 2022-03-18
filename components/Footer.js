@@ -13,6 +13,7 @@ export default function Footer() {
         <a
           href="https://www.linkedin.com/in/mahdi-beldjoudi-5b1913115/"
           target="_blank"
+          rel="noreferrer"
           className="underline "
         >
           {" "}
