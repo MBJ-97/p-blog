@@ -8,6 +8,10 @@ import { FacebookShareButton, TwitterShareButton } from "react-share";
 
 export default function singlePost({ post, category }) {
   // formatted date
+  if (!post) {
+    return null;
+  }
+
   let date = post._createdAt.slice(0, 10);
 
   // filtering the category of  the article
@@ -20,8 +24,6 @@ export default function singlePost({ post, category }) {
   }
   let result = category.filter(filterByRef);
   const { title } = result[0];
-
-  const linkSlug = post.slug.current;
 
   return (
     <div>
@@ -49,14 +51,16 @@ export default function singlePost({ post, category }) {
       <div className="share flex flex-col items-center justify-center">
         <h2 className="mb-4 text-xl font-bold">Share this article</h2>
         <div className="shareIcons flex space-x-5">
-          <TwitterShareButton url={`blog.mahdibeldjoudi.xyz/posts/${linkSlug}`}>
+          <TwitterShareButton
+            url={`blog.mahdibeldjoudi.xyz/posts/${post.slug.current}`}
+          >
             <div className="twitter rounded-full bg-gradient-to-r from-accent via-blue to-purple py-4 px-6">
               <FontAwesomeIcon icon={faTwitter} />
             </div>
           </TwitterShareButton>
 
           <FacebookShareButton
-            url={`blog.mahdibeldjoudi.xyz/posts/${linkSlug}`}
+            url={`blog.mahdibeldjoudi.xyz/posts/${post.slug.current}`}
           >
             <div className="facebook rounded-full bg-gradient-to-r from-accent via-blue to-purple py-4 px-6">
               <FontAwesomeIcon icon={faFacebook} />
