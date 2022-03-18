@@ -9,7 +9,15 @@ export default function Footer() {
         <span className="text-red">
           <FontAwesomeIcon icon={faHeart} />
         </span>
-        &nbsp; by Mahdi Beldjoudi
+        &nbsp; by &nbsp;{" "}
+        <a
+          href="https://www.linkedin.com/in/mahdi-beldjoudi-5b1913115/"
+          target="_blank"
+          className="underline "
+        >
+          {" "}
+          Mahdi Beldjoudi
+        </a>
       </p>
     </footer>
   );

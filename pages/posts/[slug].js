@@ -2,6 +2,7 @@ import sanityClient from "../../groq-client";
 import { PortableText } from "@portabletext/react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
@@ -27,6 +28,9 @@ export default function singlePost({ post, category }) {
 
   return (
     <div>
+      <Head>
+        <title>Mahdi Beldjoudi | {post.title}</title>
+      </Head>
       <div className="cover-image mb-6 max-w-5xl">
         <Image
           src={post.mainImage.asset.url}

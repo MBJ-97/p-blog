@@ -1,7 +1,7 @@
 import sanityClient from "@sanity/client";
 
 export default sanityClient({
-  projectId: "yj3cate4",
+  projectId: `${process.env.SANITY_PROJECT_ID}`,
   dataset: "production",
   useCdn: true,
 });
