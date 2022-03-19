@@ -3,27 +3,40 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 import { ThemeProvider } from "next-themes";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import Script from "next/script";
-import * as gtag from "../lib/gtag";
+import * as GTAG from "../lib/gtag";
+import { GA_TRACKING_ID } from "../lib/gtag";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      GTAG.pageview(url);
+
+      router.events.on("routeChangeComplete", handleRouteChange);
+
+      return () => {
+        router.events.off("routeChangeComplete", handleRouteChange);
+      };
+    };
+  }, [router.events]);
   return (
     <>
       <Script
-        id="google-analytics"
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
       />
 
-      <Script id="google-analytics-keys" strategy="lazyOnload">
+      <Script id="google-analytics-script" strategy="afterInteractive">
         {`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '${gtag.GA_TRACKING_ID}', {
-        page_path: window.location.pathname,
-        });
+        gtag('config', '${GA_TRACKING_ID}');
     `}
       </Script>
       <ThemeProvider attribute="class">
