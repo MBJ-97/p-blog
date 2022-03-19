@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-0M32J4742G`}
       />
 
       <Script id="google-analytics-script" strategy="afterInteractive">
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '${GA_TRACKING_ID}');
+        gtag('config', 'G-0M32J4742G');
     `}
       </Script>
       <ThemeProvider attribute="class">
