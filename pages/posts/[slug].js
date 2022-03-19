@@ -45,7 +45,7 @@ export default function singlePost({ post, category }) {
           {title}
         </span>
       </div>
-      <div className="body prose mb-8 max-w-full dark:text-white">
+      <div className="body prose mb-8 max-w-full dark:prose-invert">
         <PortableText value={post.body} />
       </div>
       <div className="share flex flex-col items-center justify-center">
