@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-0M32J4742G`}
+        src="https://www.googletagmanager.com/gtag/js?id=G-0M32J4742G"
       />
 
       <Script id="google-analytics-script" strategy="afterInteractive">
