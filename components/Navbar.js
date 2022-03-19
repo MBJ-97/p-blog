@@ -26,7 +26,7 @@ function Navbar() {
       <nav
         className={
           isOpen
-            ? "w-full bg-accent px-4 py-1 transition duration-300 ease-in-out"
+            ? "w-full bg-accent px-4 py-1 transition duration-200 ease-in-out"
             : "px-4 py-1"
         }
         id="myTopnav"
@@ -96,7 +96,7 @@ function Navbar() {
           <div className="CTAs flex items-center sm:hidden">
             <button
               className={
-                "mr-3 py-3 px-4 transition duration-300 " +
+                "mr-3 py-3 px-4 transition duration-200 " +
                 (theme === "dark"
                   ? "bg-white text-black"
                   : "bg-black text-white")
@@ -111,7 +111,7 @@ function Navbar() {
             </button>
             <button
               className={
-                "py-3 px-4 transition duration-300 " +
+                "py-3 px-4 transition duration-200 " +
                 (theme === "dark"
                   ? "bg-white text-black"
                   : "bg-black text-white")
