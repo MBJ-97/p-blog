@@ -8,7 +8,6 @@ import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import Script from "next/script";
 import * as GTAG from "../lib/gtag";
-import { GA_TRACKING_ID } from "../lib/gtag";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -28,7 +27,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Script
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-0M32J4742G"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
       />
 
       <Script id="google-analytics-script" strategy="afterInteractive">
@@ -36,7 +35,7 @@ function MyApp({ Component, pageProps }) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-0M32J4742G');
+        gtag('config', '${process.env.GA_TRACKING_ID}');
     `}
       </Script>
       <ThemeProvider attribute="class">
