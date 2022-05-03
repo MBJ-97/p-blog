@@ -9,8 +9,10 @@ export default function MainArticle({ post }) {
         <div className="image w-full sm:w-1/2">
           <Image
             src={post.mainImage.asset.url}
-            width={500}
-            height={300}
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="contain"
           ></Image>
         </div>
         <div className="infos flex w-full flex-col space-y-7 sm:w-1/2">

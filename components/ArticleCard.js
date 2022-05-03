@@ -14,7 +14,13 @@ export default function ArticleCard({ img, title, firstTitle, date, as }) {
       className="mb-8 w-full px-2.5 pt-3 pb-6 hover:border-2 hover:border-black dark:hover:border-white md:w-80"
     >
       <article className="flex h-96 flex-col justify-end">
-        <Image src={img} width={460} height={300}></Image>
+        <Image
+          src={img}
+          width="100%"
+          height="100%"
+          layout="responsive"
+          objectFit="contain"
+        ></Image>
         <small className="mb-2 mt-4">{formattedDate}</small>
         <h3 className="mb-12 text-2xl text-2xl font-semibold">{title}</h3>
 
