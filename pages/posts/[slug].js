@@ -30,11 +30,11 @@ export default function singlePost({ post, category }) {
       <Head>
         <title>Mahdi Beldjoudi | {post.title}</title>
       </Head>
-      <div className="cover-image mb-6 max-w-5xl">
+      <div className="cover-image relative mb-6 w-full max-w-5xl">
         <Image
           src={post.mainImage.asset.url}
-          width={500}
-          height={180}
+          width="100%"
+          height="50%"
           layout="responsive"
         ></Image>
       </div>
