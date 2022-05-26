@@ -11,7 +11,7 @@ export default function Home({ posts, categories }) {
         <meta
           name="description"
           content="Hey I am Mahdi Beldjoudi and this is my peronal blog ! 
-          I write about web developement, marketing and lifestile stuff."
+          I write about web developement and marketing stuff."
         />
       </Head>
       <MainArticle post={posts[0]} />

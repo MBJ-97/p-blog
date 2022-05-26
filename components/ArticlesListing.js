@@ -34,7 +34,7 @@ export default function ArticlesListing({ posts, categories, firstTitle }) {
       </div>
 
       <div className="mb-20 gap-4 md:flex md:flex-wrap">
-        {filteredPosts.length > 0 ? ( // shit goes here catId == not empty
+        {filteredPosts.length > 0 ? (
           filteredPosts.map((post) => (
             <ArticleCard
               key={post.title}
