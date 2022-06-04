@@ -31,7 +31,7 @@ function Navbar() {
         }
         id="myTopnav"
       >
-        <div className="navBar text-normal mt-4 flex items-center justify-between">
+        <div className="navBar text-normal mt-4 flex items-center justify-between xl:px-16">
           <div className="navTitle flex items-center">
             <Link href="/">
               <a>
