@@ -16,10 +16,10 @@ export default function Drawer() {
               </li>
             </Link>
           </li>
-          <Link href="/under-construction">
+          <Link href="https://mahdibeldjoudi.xyz/#projects">
             <li className="mx-auto">
               <a className="underlineStyle">
-                <span>Dev-Portfolio</span>
+                <span>Projects</span>
               </a>
             </li>
           </Link>

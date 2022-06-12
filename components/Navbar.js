@@ -49,19 +49,16 @@ function Navbar() {
             <div className="navLinks hidden sm:flex">
               <ul className="flex cursor-pointer items-center space-y-7 sm:space-y-0 sm:space-x-7">
                 <li>
-                  <a
-                    href="https://mahdibeldjoudi.xyz/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-semibold"
-                  >
-                    <span>Home</span>
-                  </a>
+                  <Link href="https://mahdibeldjoudi.xyz/">
+                    <a className="font-semibold">
+                      <span>Home</span>
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/under-construction">
+                  <Link href="https://mahdibeldjoudi.xyz/#projects">
                     <a className="font-semibold">
-                      <span>Dev-Portfolio</span>
+                      <span>Projects</span>
                     </a>
                   </Link>
                 </li>
