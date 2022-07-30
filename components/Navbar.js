@@ -50,14 +50,14 @@ function Navbar() {
               <ul className="flex cursor-pointer items-center space-y-7 sm:space-y-0 sm:space-x-7">
                 <li>
                   <Link href="https://mahdibeldjoudi.xyz/">
-                    <a className="font-semibold">
+                    <a>
                       <span>Home</span>
                     </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="https://mahdibeldjoudi.xyz/#projects">
-                    <a className="font-semibold">
+                    <a>
                       <span>Projects</span>
                     </a>
                   </Link>
@@ -90,10 +90,24 @@ function Navbar() {
               </ul>
             </div>
           </div>
+          {/* responsive buttons */}
           <div className="CTAs flex items-center sm:hidden">
             <button
               className={
-                "mr-3 py-3 px-4 transition duration-200 " +
+                "py-3 px-4 transition duration-200 " +
+                (theme === "dark" ? "text-white" : "text-black")
+              }
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {!isOpen ? (
+                <FontAwesomeIcon icon={faBars} size="2x" />
+              ) : (
+                <FontAwesomeIcon icon={faXmark} size="2x" />
+              )}
+            </button>
+            <button
+              className={
+                "mr-3 rounded py-3 px-4 transition duration-200 " +
                 (theme === "dark"
                   ? "bg-white text-black"
                   : "bg-black text-white")
@@ -104,21 +118,6 @@ function Navbar() {
                 <FontAwesomeIcon icon={faSun} />
               ) : (
                 <FontAwesomeIcon icon={faMoon} />
-              )}
-            </button>
-            <button
-              className={
-                "py-3 px-4 transition duration-200 " +
-                (theme === "dark"
-                  ? "bg-white text-black"
-                  : "bg-black text-white")
-              }
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {!isOpen ? (
-                <FontAwesomeIcon icon={faBars} />
-              ) : (
-                <FontAwesomeIcon icon={faXmark} />
               )}
             </button>
           </div>

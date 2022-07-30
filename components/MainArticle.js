@@ -13,6 +13,7 @@ export default function MainArticle({ post }) {
             height="100%"
             layout="responsive"
             objectFit="contain"
+            priority={true}
           ></Image>
         </div>
         <div className="infos flex w-full flex-col space-y-7 sm:w-1/2">
