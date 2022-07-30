@@ -94,7 +94,7 @@ function Navbar() {
           <div className="CTAs flex items-center sm:hidden">
             <button
               className={
-                "py-3 px-4 transition duration-200 " +
+                "mr-2 py-3 px-4 transition duration-200 " +
                 (theme === "dark" ? "text-white" : "text-black")
               }
               onClick={() => setIsOpen(!isOpen)}
@@ -107,7 +107,7 @@ function Navbar() {
             </button>
             <button
               className={
-                "mr-3 rounded py-3 px-4 transition duration-200 " +
+                "rounded py-3 px-4 transition duration-200 " +
                 (theme === "dark"
                   ? "bg-white text-black"
                   : "bg-black text-white")
