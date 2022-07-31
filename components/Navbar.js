@@ -73,7 +73,7 @@ function Navbar() {
                 <li>
                   <button
                     className={
-                      "py-4 px-6 " +
+                      "rounded py-4 px-6 " +
                       (theme === "dark"
                         ? "bg-white text-black"
                         : "bg-black text-white")
