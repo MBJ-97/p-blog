@@ -36,9 +36,19 @@ function Navbar() {
             <Link href="/">
               <a>
                 {theme === `dark` ? (
-                  <Image src={whiteLogo} width={70} height={70} />
+                  <Image
+                    src={whiteLogo}
+                    width={70}
+                    height={70}
+                    priority={true}
+                  />
                 ) : (
-                  <Image src={blackLogo} width={70} height={70} />
+                  <Image
+                    src={blackLogo}
+                    width={70}
+                    height={70}
+                    priority={true}
+                  />
                 )}
               </a>
             </Link>
